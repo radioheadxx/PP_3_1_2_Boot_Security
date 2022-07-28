@@ -41,9 +41,10 @@
         <td th:utext="${user.roles}"></td>
         <td><a th:href="@{/admin/update/{id}(id=${user.id})}">Edit</a>
             &nbsp &nbsp &nbsp
-            <a th:href="@{/admin/delete/{id}(id=${user.id})}">Delete</a>
+            <form th:action="@{/admin/delete/{id}(id=${user.id})}" th:method="delete">
+                <input type="submit" value="Delete"/>
+            </form>
         </td>
-
    </tr>
     </tbody>
 </table>
